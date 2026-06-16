@@ -1,0 +1,23 @@
+# Gizli bilgiler — image'a asla girmesin
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Sanal ortamlar
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Test & lint
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

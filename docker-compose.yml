@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    # Gizli anahtarlar image'a değil, env_file ile container'a aktarılır
+    env_file:
+      - ./backend/.env
+    # Geliştirme sırasında kaynak değişikliklerini anında yansıt
+    develop:
+      watch:
+        - action: sync
+          path: ./backend
+          target: /app
+          ignore:
+            - __pycache__/
+            - .env
+        - action: rebuild
+          path: ./backend/requirements.txt
