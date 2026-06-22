@@ -1,13 +1,14 @@
 services:
   backend:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
+    container_name: browser-agent-server
     ports:
-      - "8000:8000"
+      - "8002:8000"
     # Gizli anahtarlar image'a değil, env_file ile container'a aktarılır
     env_file:
-      - ./backend/.env
+      - ./.env
     # Geliştirme sırasında kaynak değişikliklerini anında yansıt
     develop:
       watch:
